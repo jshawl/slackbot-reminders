@@ -4,6 +4,10 @@ require_relative './slackbot'
 
 class Reminder < ActiveRecord::Base
   def self.initialize_from_english channel, text
+    unless text.match(/;/)
+      Slackbot.new.reply(channel, "Usage: 'thing to do; when to do it'")
+      return
+    end
     @text = text.split(";")[0]
     @channel = channel
     @at = Chronic.parse(text.split(";")[1])
@@ -12,8 +16,10 @@ class Reminder < ActiveRecord::Base
 
   def self.create_from_english channel, text
     s = self.initialize_from_english(channel, text)
-    s.save
-    p s
+    if s
+      s.save
+      Slackbot.new.reply(channel, "Reminder created successfully!")
+    end
   end
 
   def at_passed?
@@ -21,8 +27,7 @@ class Reminder < ActiveRecord::Base
   end
 
   def remind
-    s = Slackbot.new
-    s.reply(self.channel, "Reminder! " + self.text)
+    Slackbot.new.reply(self.channel, "Reminder! " + self.text)
     self.has_been_reminded = true
     self.save
   end
