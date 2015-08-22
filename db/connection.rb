@@ -2,7 +2,7 @@ require 'active_record'
 
 ActiveRecord::Base.establish_connection(
   adapter: "sqlite3",
-  database: "reminders.db"
+  database: "./db/reminders.db"
 )
 
 ActiveRecord::Schema.define do
