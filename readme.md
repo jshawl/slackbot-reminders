@@ -13,6 +13,8 @@ Send a direct message to the bot:
 Everything before the ";" is the reminder. Everything after the semi-colon is when the reminder will be sent back.
 The complete list of available time descriptions can be found here - https://github.com/mojombo/chronic#examples
 
+The bot will reply with your reminder at the specified time via direct message.
+
 ## Local Setup
 
 ### Configure Environment Variables
