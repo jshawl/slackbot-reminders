@@ -1,4 +1,4 @@
-# Reminders Slackbot
+# Slackbot Reminders
 
 ![](https://dl.dropboxusercontent.com/s/xv8m8n0yisaqq4z/reminder-clipart-4TbodG4Tg.gif?dl=0)
 
