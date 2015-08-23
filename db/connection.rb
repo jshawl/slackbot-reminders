@@ -3,7 +3,7 @@ require 'active_record'
 ActiveRecord::Base.default_timezone = :local
 ActiveRecord::Base.establish_connection(
   adapter: "sqlite3",
-  database: "./db/reminders.db"
+  database: "/home/jesse/slackbot-reminders/db/reminders.db"
 )
 
 ActiveRecord::Schema.define do
