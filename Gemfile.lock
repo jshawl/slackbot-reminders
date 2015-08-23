@@ -20,6 +20,7 @@ GEM
     chronic (0.10.2)
     coderay (1.1.0)
     cookiejar (0.3.2)
+    daemons (1.2.3)
     em-http-request (1.1.2)
       addressable (>= 2.3.4)
       cookiejar
@@ -70,6 +71,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   chronic
+  daemons
   faye
   httparty
   pry
