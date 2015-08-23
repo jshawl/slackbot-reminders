@@ -45,11 +45,16 @@ ActiveRecord::Base.establish_connection(
 
 Keep this script running in the background with `tmux` or `god`
 
+This listens for new direct messages to create the reminders.
+
 ## Configure the Cron Job
 
 ```
 */5 * * * * ruby /path/to/reminders/cron.rb
 ```
+
+This checks the time specified in the reminder and sends the reminder
+if the time has passed and the reminder has not yet been sent.
 
 Note: environment variables are limited in a cron environment. If using RVM, follow 
 https://rvm.io/deployment/cron to configure cron environment.
